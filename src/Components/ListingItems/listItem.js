@@ -1,12 +1,20 @@
-import React from 'react'
+import React , {Component} from 'react'
 import './listItem.css'
 
-let listItem = (props) =>{
+class Listitem extends Component{
+    createtask(item){
+        return <li key={item.key}>{item.text}</li>
+    }
+
+    render(){
+    const items = this.props.items;
+    const listItems = items.map(this.createtask);
     return(
-        <div className = "Listing">
-            <h1>From Listing</h1>
-        </div>
+        <ul className="theList">
+      {listItems}
+  </ul>
     )
 }
+}
 
-export default listItem;
+export default Listitem;

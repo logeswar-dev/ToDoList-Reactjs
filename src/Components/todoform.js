@@ -28,7 +28,7 @@ class TodoForm extends Component{
         let newItem = this.state.currentItems;
         console.log(newItem);
         if(newItem.text === ""){
-            const newItems = [...this.state.items , newItems]
+            const newItems = [...this.state.items , newItem]
             this.setState({
                 items: newItems,
                 currentItems:{
@@ -50,7 +50,7 @@ class TodoForm extends Component{
                     value={this.state.currentItems.text} 
                     onChange={this.handleInput} />
                     <button>Add</button>
-                     <ListItem></ListItem>
+                     <ListItem items = {this.state.items}></ListItem>
                     </form>
                 </header>
             </div>
