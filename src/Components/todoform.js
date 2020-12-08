@@ -50,7 +50,7 @@ class TodoForm extends Component{
                     value={this.state.currentItems.text} 
                     onChange={this.handleInput} />
                     <button>Add</button>
-                     <ListItem items = {this.state.items}></ListItem>
+                     <ListItem items = {this.state.items} currentItems = {this.state.currentItems}></ListItem>
                     </form>
                 </header>
             </div>
