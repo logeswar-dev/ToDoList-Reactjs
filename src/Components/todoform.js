@@ -1,5 +1,5 @@
 import React , {Component} from 'react'
-import ListItem from '../Components/ListingItems/listItem'
+import ListItem from './ListingItems/listItem'
 
 class TodoForm extends Component{
     constructor(props){
@@ -27,7 +27,7 @@ class TodoForm extends Component{
         e.preventDefault();
         let newItem = this.state.currentItems;
         console.log(newItem);
-        if(newItem.text === ""){
+        if(newItem.text !==""){
             const newItems = [...this.state.items , newItem]
             this.setState({
                 items: newItems,
@@ -50,7 +50,7 @@ class TodoForm extends Component{
                     value={this.state.currentItems.text} 
                     onChange={this.handleInput} />
                     <button>Add</button>
-                     <ListItem items = {this.state.items} currentItems = {this.state.currentItems}></ListItem>
+                     <ListItem items = {this.state.items}></ListItem>
                     </form>
                 </header>
             </div>
