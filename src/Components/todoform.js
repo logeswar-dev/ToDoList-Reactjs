@@ -39,6 +39,14 @@ class TodoForm extends Component{
         }
     }
 
+    deleteItem(key){
+        const filteredItems = this.state.items.filter(item =>
+            item !==key);
+            this.setState({
+                items:filteredItems
+            })
+    }
+
     render(){
         return(
             <div className="App">
@@ -50,7 +58,7 @@ class TodoForm extends Component{
                     value={this.state.currentItems.text} 
                     onChange={this.handleInput} />
                     <button>Add</button>
-                     <ListItem items = {this.state.items}></ListItem>
+                     <ListItem items = {this.state.items}  deleteItem = {this.deleteItem}></ListItem>
                     </form>
                 </header>
             </div>

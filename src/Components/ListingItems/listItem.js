@@ -5,12 +5,13 @@ class Listitem extends Component{
     render(){
     const items = this.props.items;
     const listItems = items.map(item => {
-        return <li key={item.key}>{item.text}</li>
+        return <div className="list"><p key={item.key}>{item.text} <button onClick={() => this.props.deleteItem(item.key)}>Delete</button></p>
+        </div>
     });
     return(
-        <ul className="theList">
-      {listItems}
-  </ul>
+        <div className="listitems">
+        {listItems}
+  </div>
     )
 }
 }
